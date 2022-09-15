@@ -140,6 +140,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    padding-bottom: 40px;
   }
 }
 /*PENGUIN*/
@@ -603,9 +604,30 @@ transform:rotateY(45deg) translateZ(540px) scale(1)
 	}	
 		
 	}
+/* CONTACT */
 #contact {
   background-color: var(--section-color);
 }
+#profile-link {
+  text-decoration: none;
+  color: var(--body-color);
+}
+.meeting {
+  font-size: 30px;
+  font-family: 'Gloria Hallelujah', sans-serif;
+  margin-top: 0;
+}
+.shadow {
+  font-size: 25px;
+  text-shadow: 2px 2px 1px gray;
+  transition: transform 0.3s ease-out;
+  margin-top: 25px;
+}
+
+.shadow:hover {
+  transform: translateY(8px);
+}
+
 /* FOOTER */
 footer {
   background-color: var(--body-color);
@@ -635,6 +657,6 @@ footer, footer a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 98%;
+    width: 95%;
   }
 }
