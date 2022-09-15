@@ -22,7 +22,6 @@ body {
     background-color: #f5f6f7;
     color: var(--body-color);
     width: 100%;
-    height: 100vh;
 }
 header {
   display: flex;
@@ -77,6 +76,44 @@ li > a {
   color: inherit;
   text-decoration: none;
 }
+.burger, #toggle
+{
+    display: none;
+}
+@media all and (max-width: 850px)
+{
+    nav
+    {
+        height: 20px;
+    }
+ 
+    nav ul
+    {
+      display: none;
+      flex-direction: column;
+      background: var(--body-color);
+      height: 220px;
+    }
+    nav ul a {
+      width: 50%;
+    }
+    .burger
+    {
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 90%;
+        padding-right: 240px;
+        padding-top: 10px;
+        font-size: 40px;
+        color: var(--section-color);
+        cursor: pointer;
+    }
+    #toggle:checked + ul {
+      display: flex;
+  }
+}
 /* MAIN SECTION */
 main {
   overflow: hidden;
@@ -96,6 +133,14 @@ section {
 }
 .left {
   text-align: center;
+}
+@media all and (max-width: 850px)
+{
+    #welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 }
 /*PENGUIN*/
 .penguin {
@@ -296,19 +341,15 @@ section {
 #projects > h2 {
   color: var(--section-color);
 }
-.project {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@media (max-width:850px){
+  h2 {
+    font-size: 38px;
+    text-align: center;
+  }
 }
-.project-group { 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-bottom: 15px;
+a {
   width: 100%;
-  height: 40vh;
+  height: 100%;
 }
 .project-tile {
   text-decoration: none;
@@ -318,16 +359,250 @@ section {
   flex-direction: column;
   border: 2px solid var(--section-color);
   border-radius: 9px;
-  width: 24%;
 }
 a > p {
-  text-align: center;
+  margin-top: auto;
 }
-.image {
+img {
   width: 100%; 
-  height: 75%;
+  height: 69%;
   object-fit: cover;
 }
+
+.caroussel_diapo {	
+  text-align:center;
+  margin:5rem auto;
+}
+.caroussel_diapo input {
+	position:absolute;
+  left:-9999px;
+}
+
+.caroussel {
+
+max-width: 500px;
+aspect-ratio:3/2;
+position: relative;
+margin:auto;
+	
+	}
+@supports not(aspect-ratio:3/2){
+	
+	.caroussel{padding-top: 66.60%}	
+	
+	}
+	
+.caroussel a {
+	
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+outline: 1px solid transparent;
+backface-visibility: hidden;
+transition: 1s opacity
+	
+}
+
+.caroussel_diapo input + label {
+	
+cursor: pointer;
+background-color:#bababa;
+display: inline-block;
+width: 35px;
+aspect-ratio:1;
+border-radius: 50%;
+	
+	}
+
+	@supports not(aspect-ratio:1){
+	.caroussel_diapo input + label{height:20px}	
+	}
+	
+.caroussel_diapo input:checked + label{
+	background-color: var(--section-color);
+	
+		
+	}
+  
+
+/*droite*/
+.caroussel_diapo #carou_un:checked ~ .contenu_carou .caroussel a:nth-child(1),
+.caroussel_diapo #carou_deux:checked ~ .contenu_carou .caroussel a:nth-child(2),
+.caroussel_diapo #carou_trois:checked ~ .contenu_carou .caroussel a:nth-child(3),
+.caroussel_diapo #carou_quatre:checked ~ .contenu_carou .caroussel a:nth-child(4),
+.caroussel_diapo #carou_cinq:checked ~ .contenu_carou .caroussel a:nth-child(5),
+.caroussel_diapo #carou_six:checked ~ .contenu_carou .caroussel a:nth-child(6),
+.caroussel_diapo #carou_sept:checked ~ .contenu_carou .caroussel a:nth-child(7),
+.caroussel_diapo #carou_huit:checked ~ .contenu_carou .caroussel a:nth-child(8)
+	
+	{
+		opacity:1;
+	
+	}
+	
+@media (min-width:800px){
+		
+.caroussel {
+transform-style: preserve-3d;
+margin:2rem auto;
+will-change: transform;
+transition: 1s transform
+	}
+		
+.contenu_carou {perspective:2000px}
+
+.caroussel a {
+filter:drop-shadow(0 15px 5px hsla(0, 0%, 0%, 0.43));
+opacity:1;transition: 1s transform}
+	
+	
+	.caroussel a:nth-child(1){
+	
+	transform:translate3d(0,0,540px) scale(.8)
+	
+	}
+	
+.caroussel a:nth-child(2){
+	
+	transform:rotateY(45deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel a:nth-child(3){
+	
+	transform:rotateY(90deg) translateZ(540px) scale(.8)
+		
+	}
+	
+.caroussel a:nth-child(4){
+	
+	transform:rotateY(135deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel a:nth-child(5){
+	
+	transform:rotateY(180deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel a:nth-child(6){
+	
+	transform:rotateY(225deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel a:nth-child(7){
+	
+transform:rotateY(270deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel a:nth-child(8){
+	
+transform:rotateY(315deg) translateZ(540px) scale(.8)
+
+}	
+		
+	.caroussel_diapo #carou_un:checked ~ .contenu_carou .caroussel{
+
+	transform:translateZ(-540px)
+	
+	}
+	
+.caroussel_diapo #carou_deux:checked ~ .contenu_carou .caroussel{
+	
+transform:translateZ(-540px) rotateY(-45deg)
+	
+	}
+	
+.caroussel_diapo #carou_trois:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-90deg)
+		
+	}
+	
+.caroussel_diapo #carou_quatre:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-135deg)
+		
+	}
+	
+.caroussel_diapo #carou_cinq:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-180deg)
+		
+	}
+	
+.caroussel_diapo #carou_six:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-225deg)
+		
+	}
+	
+.caroussel_diapo #carou_sept:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-270deg)
+	
+	}
+	
+.caroussel_diapo #carou_huit:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-315deg)
+	
+	}
+
+
+/*droite*/
+.caroussel_diapo #carou_un:checked ~ .contenu_carou .caroussel a:nth-child(1){
+	
+	transform:translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_deux:checked ~ .contenu_carou .caroussel a:nth-child(2){
+	
+transform:rotateY(45deg) translateZ(540px) scale(1)
+	
+	}
+.caroussel_diapo #carou_trois:checked ~ .contenu_carou .caroussel a:nth-child(3){
+	
+	transform:rotateY(90deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_quatre:checked ~ .contenu_carou .caroussel a:nth-child(4){
+	
+	transform:rotateY(135deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_cinq:checked ~ .contenu_carou .caroussel a:nth-child(5){
+	
+	transform:rotateY(180deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_six:checked ~ .contenu_carou .caroussel a:nth-child(6){
+	
+	transform:rotateY(225deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_sept:checked ~ .contenu_carou .caroussel a:nth-child(7){
+	
+	transform:rotateY(270deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_huit:checked ~ .contenu_carou .caroussel a:nth-child(8){
+	
+	transform:rotateY(315deg) translateZ(540px) scale(1)
+		
+	}	
+		
+	}
 #contact {
   background-color: var(--section-color);
 }
@@ -343,7 +618,7 @@ footer > ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 60%;
+  width: 68%;
 }
 footer > ul > li {
     list-style: none;  
@@ -351,4 +626,15 @@ footer > ul > li {
 footer, footer a {
   color: var(--section-color);
   font-size: 20px;
+}
+@media (max-width:850px){
+  footer, footer a {
+    font-size: 14px;
+  }
+  footer > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 98%;
+  }
 }
