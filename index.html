@@ -12,6 +12,8 @@
     <header>
       <h1>Bonjour</h1>
       <nav id="navbar">
+        <label class="burger" for="toggle">☰</label>
+        <input type="checkbox" id="toggle">
         <ul>
           <li><a class="nav-link" href="#welcome-section">Accueil</a></li>
           <li><a class="nav-link" href="#projects">Mes projets</a></li>
@@ -57,51 +59,67 @@
         </section>
         <section id="projects">
           <h2>Voici quelques uns de mes projets</h2>
-          <div class="project">
-            <div class="project-group">
-              <a href="https://jnniv.github.io/Page_descriptive_du_futur/" class="project-tile" target="_blank">
-                <img class="image" src="images/futur.jpg" alt="futur, page descriptive en html css">
-                <p>Page descriptive</p>
-              </a>
-              <a href="https://jnniv.github.io/Menu_Brunch/" class="project-tile" target="_blank">
-                <img class="image" src="images/brunch.jpg" alt="">
-                <p>Carte Menu</p>
-              </a>
-              <a href="https://jnniv.github.io/Ville_Jour_Nuit/" class="project-tile" target="_blank">
-                <img class="image" src="images/ville.jpg" alt="">
-                <p>Ville jour/nuit</p>
-              </a>
-              <a href="https://jnniv.github.io/Formulaire_d_inscription/" class="project-tile" target="_blank">
-                <img class="image" src="images/form.jpg" alt="">
-                <p>Formulaire Inscription</p>
-              </a>
-            </div>
-            <div class="project-group">
-              <a href="https://jnniv.github.io/Landing_Page/" class="project-tile" target="_blank">
-                <img class="image" src="images/page.jpg" alt="">
-                <p>Landing Page</p>
-              </a>
-              <a href="https://jnniv.github.io/Magazine/" class="project-tile" target="_blank">
-                <img class="image" src="images/magazine.jpg" alt="">
-                <p>Magazine</p>
-              </a>
-              <a href="https://jnniv.github.io/Surfing_Site/" class="project-tile" target="_blank">
-                <img class="image" src="images/surf.jpg" alt="">
-                <p>Site Vitrine</p>
-              </a>
-              <a href="https://jnniv.github.io/Tetris/" class="project-tile" target="_blank">
-                <img class="image" src="images/tetris.jpg" alt="">
-                <p>Jeu de Tetris</p>
-              </a>
-            </div>  
-          </div>         
+            <div class='caroussel_diapo'>
+              <input checked id="carou_un" name="rotation" type="radio">
+              <label for="carou_un"></label>
+              <input id="carou_deux" name="rotation" type="radio">
+              <label for="carou_deux"></label>
+              <input id="carou_trois" name="rotation" type="radio">
+              <label for="carou_trois"></label>
+              <input id="carou_quatre" name="rotation" type="radio">
+              <label for="carou_quatre"></label>
+              <input id="carou_cinq" name="rotation" type="radio">
+              <label for="carou_cinq"></label>
+              <input id="carou_six" name="rotation" type="radio">
+              <label for="carou_six"></label>
+              <input id="carou_sept" name="rotation" type="radio">
+              <label for="carou_sept"></label>
+              <input id="carou_huit" name="rotation" type="radio">
+              <label for="carou_huit"></label>
+              <div class="contenu_carou">
+                <div class="caroussel">
+                  <a href="https://jnniv.github.io/Page_descriptive_du_futur/" class="project-tile" target="_blank">
+                    <img src="images/futur.jpg" alt="futur, page descriptive en html css">
+                    <p>Page descriptive</p>
+                  </a>
+                  <a href="https://jnniv.github.io/Menu_Brunch/" class="project-tile" target="_blank">
+                    <img src="images/brunch.jpg" alt="menu brunch, restaurant">
+                    <p>Carte Menu</p>
+                  </a>
+                  <a href="https://jnniv.github.io/Ville_Jour_Nuit/" class="project-tile" target="_blank">
+                    <img src="images/ville.jpg" alt="ville de jour, ville de nuit en css">
+                    <p>Ville jour/nuit</p>
+                  </a>
+                  <a href="https://jnniv.github.io/Formulaire_d_inscription/" class="project-tile" target="_blank">
+                    <img src="images/form.jpg" alt="formulaire, devis">
+                    <p>Formulaire Inscription</p>
+                  </a>
+                  <a href="https://jnniv.github.io/Landing_Page/" class="project-tile" target="_blank">
+                    <img src="images/page.jpg" alt="">
+                    <p>Landing Page</p>
+                  </a>
+                  <a href="https://jnniv.github.io/Magazine/" class="project-tile" target="_blank">
+                    <img src="images/magazine.jpg" alt="">
+                    <p>Magazine</p>
+                  </a>
+                  <a href="https://jnniv.github.io/Surfing_Site/" class="project-tile" target="_blank">
+                    <img src="images/surf.jpg" alt="">
+                    <p>Site Vitrine</p>
+                  </a>
+                  <a href="https://jnniv.github.io/Tetris/" class="project-tile" target="_blank">
+                    <img src="images/tetris.jpg" alt="tetris">
+                    <p>Jeu de Tetris</p>
+                  </a>                  
+                </div>
+              </div>
+            </div>    
         </section>
         <section id="contact">
           <h2>Travaillons Ensemble</h2>
           <p>En présentiel ou à distance.</p>
           <p>Alors? On prend un café?</p>
           <div class="social">
-            <p id="profile-link">Mon github.</p>
+            <a href="https://github.com/JnniV" id="profile-link">Mon github.</a>
             <p>Envoyer un email.</p>
             <p>Me joindre par téléphone.</p>
           </div>
@@ -109,8 +127,8 @@
     </main>
     <footer>
         <ul>
-          <li><a class="foot-link" href="#welcome-section">Retour Accueil</a></li>
-          <li><a class="foot-link" href="fichier.pdf" download>Télécharger CV</a></li>
+          <li><a class="foot-link" href="#welcome-section">Accueil</a></li>
+          <li><a class="foot-link" href="cv.pdf" download>Télécharger CV</a></li>
           <li><a class="foot-link" href="#">@ Créé par JnniV</a></li>
         </ul>
     </footer>          
