@@ -369,7 +369,6 @@ img {
   height: 69%;
   object-fit: cover;
 }
-
 .caroussel_diapo {	
   text-align:center;
   margin:5rem auto;
@@ -378,43 +377,34 @@ img {
 	position:absolute;
   left:-9999px;
 }
-
 .caroussel {
-
-max-width: 500px;
-aspect-ratio:3/2;
-position: relative;
-margin:auto;
-	
-	}
-@supports not(aspect-ratio:3/2){
-	
-	.caroussel{padding-top: 66.60%}	
-	
-	}
-	
-.caroussel a {
-	
-position: absolute;
-top: 0;
-left: 0;
-opacity: 0;
-outline: 1px solid transparent;
-backface-visibility: hidden;
-transition: 1s opacity
-	
+  max-width: 500px;
+  aspect-ratio:3/2;
+  position: relative;
+  margin:auto;
 }
-
+@supports not(aspect-ratio:3/2) {
+	.caroussel{
+    padding-top: 66.50%
+  }		
+}	
+.caroussel a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+  transition: 1s opacity
+}
 .caroussel_diapo input + label {
-	
-cursor: pointer;
-background-color:#bababa;
-display: inline-block;
-width: 35px;
-aspect-ratio:1;
-border-radius: 50%;
-	
-	}
+  cursor: pointer;
+  background-color:#bababa;
+  display: inline-block;
+  width: 32px;
+  aspect-ratio:1;
+  border-radius: 50%;
+}
 
 	@supports not(aspect-ratio:1){
 	.caroussel_diapo input + label{height:20px}	
@@ -423,10 +413,8 @@ border-radius: 50%;
 .caroussel_diapo input:checked + label{
 	background-color: var(--section-color);
 	
-		
 	}
   
-
 /*droite*/
 .caroussel_diapo #carou_un:checked ~ .contenu_carou .caroussel a:nth-child(1),
 .caroussel_diapo #carou_deux:checked ~ .contenu_carou .caroussel a:nth-child(2),
@@ -442,8 +430,6 @@ border-radius: 50%;
 	
 	}
 	
-@media (min-width:800px){
-		
 .caroussel {
 transform-style: preserve-3d;
 margin:2rem auto;
@@ -454,8 +440,10 @@ transition: 1s transform
 .contenu_carou {perspective:2000px}
 
 .caroussel a {
-filter:drop-shadow(0 15px 5px hsla(0, 0%, 0%, 0.43));
-opacity:1;transition: 1s transform}
+  filter:drop-shadow(0 15px 5px hsla(0, 0%, 0%, 0.43));
+  opacity:1;
+  transition: 1s transform
+}
 	
 	
 	.caroussel a:nth-child(1){
@@ -602,13 +590,12 @@ transform:rotateY(45deg) translateZ(540px) scale(1)
 	transform:rotateY(315deg) translateZ(540px) scale(1)
 		
 	}	
-		
-	}
+	
 /* CONTACT */
 #contact {
   background-color: var(--section-color);
 }
-#profile-link {
+#profile-link, #email {
   text-decoration: none;
   color: var(--body-color);
 }
@@ -623,11 +610,24 @@ transform:rotateY(45deg) translateZ(540px) scale(1)
   transition: transform 0.3s ease-out;
   margin-top: 25px;
 }
-
 .shadow:hover {
   transform: translateY(8px);
 }
-
+#text {
+  opacity:1;
+}
+#tel {
+  display:none;
+}
+.shadow:hover span#text {
+  opacity:0;
+}
+.shadow:hover span#tel {
+  display:inherit;
+  position:absolute;
+  left: 10%;
+  top: 0;
+}
 /* FOOTER */
 footer {
   background-color: var(--body-color);
