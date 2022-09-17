@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="portfolio individuel, projets, code, développement web, digital" />
+    <title>Mon Portfolio</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://kit.fontawesome.com/041cc62a46.js" crossorigin="anonymous"></script>
-    <title>Mon Portfolio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -96,15 +97,15 @@
                     <p>Formulaire Inscription</p>
                   </a>
                   <a href="https://jnniv.github.io/Landing_Page/" class="project-tile" target="_blank">
-                    <img src="images/page.jpg" alt="">
+                    <img src="images/page.jpg" alt="landing page classique">
                     <p>Landing Page</p>
                   </a>
                   <a href="https://jnniv.github.io/Magazine/" class="project-tile" target="_blank">
-                    <img src="images/magazine.jpg" alt="">
+                    <img src="images/magazine.jpg" alt="page de magazine">
                     <p>Magazine</p>
                   </a>
                   <a href="https://jnniv.github.io/Surfing_Site/" class="project-tile" target="_blank">
-                    <img src="images/surf.jpg" alt="">
+                    <img src="images/surf.jpg" alt="surf, site vitrine">
                     <p>Site Vitrine</p>
                   </a>
                   <a href="https://jnniv.github.io/Tetris/" class="project-tile" target="_blank">
@@ -121,8 +122,11 @@
           <p class="meeting">Rencontrons nous <i class="fa-regular fa-handshake"></i></p>
           <div class="social">
             <a href="https://github.com/JnniV" id="profile-link" target="_blank"><p class="shadow"><i class="fab fa-github"></i> Mon github</a></p>
-            <p class="shadow"><i class="fas fa-at"></i> Envoyer un email</p>
-            <p class="shadow"><i class="fas fa-mobile-alt"></i> Me joindre par téléphone</p>
+            <a href="mailto:jennv.contact@gmail.com" id="email" target="_blank"><p class="shadow"><i class="fas fa-at"></i> Envoyer un email</a></p>
+            <p class="shadow"><i class="fas fa-mobile-alt"></i><span id="text"> Me joindre par téléphone</span><span id="tel"> 07.50.22.22.22</span></p>
+              <audio id="yes" peload="auto">
+                  <source src="yes.mp3">
+              </audio>
           </div>
         </section>
     </main>
@@ -132,6 +136,13 @@
           <li><a class="foot-link" href="cv.pdf" download>Télécharger CV</a></li>
           <li><a class="foot-link" href="#">@ Créé par JnniV</a></li>
         </ul>
-    </footer>          
+    </footer>  
+    <script>
+      var yesOne= $("#yes")[0];
+      $("#tel")
+      .mouseenter(function() {
+          yesOne.play();
+      });
+    </script>
   </body>
 </html>
